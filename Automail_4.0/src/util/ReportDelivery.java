@@ -1,5 +1,7 @@
 package util;
 
+import automail.Automail;
+import automail.Building;
 import automail.MailItem;
 import automail.Robot;
 import exceptions.MailAlreadyDeliveredException;
@@ -16,15 +18,10 @@ public class ReportDelivery implements IMailDelivery {
     /**An array list to record mails that have been delivered*/
     private Set<MailItem> deliveredItems;
     private static double total_delay = 0;
-    private boolean fee_charging;
 
     public ReportDelivery()
     {
         deliveredItems = new HashSet<>();
-    }
-
-    public void setFee_charging (boolean fee_charging) {
-        fee_charging = fee_charging;
     }
 
     /** Confirm the delivery and calculate the total score */
